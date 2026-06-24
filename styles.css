@@ -1,0 +1,15 @@
+.quote-reply-btn {
+  /* sits alongside native Slack icon buttons — let their shared classes handle size/shape */
+  color: var(--sk_primary_foreground, #1d1c1d) !important;
+  opacity: 0.75;
+  transition: opacity 0.1s ease, background-color 0.1s ease;
+}
+
+.quote-reply-btn:hover {
+  opacity: 1;
+}
+
+.quote-reply-btn svg {
+  display: block;
+  pointer-events: none;
+}

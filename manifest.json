@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Slack Quote Reply",
+  "version": "1.0",
+  "description": "Adds a quote-reply button to Slack message hover actions",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Slack Quote Reply"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://app.slack.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://app.slack.com/*"],
+      "js": ["bridge.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
